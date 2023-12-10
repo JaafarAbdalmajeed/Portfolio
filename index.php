@@ -1,5 +1,5 @@
 <?php
-  include 'config/db.php';
+  include 'Backend/config/db.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
