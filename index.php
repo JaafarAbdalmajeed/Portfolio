@@ -67,11 +67,19 @@
     ?>
     <!-- End Testimonials Section -->
 
+    
+
     <!-- ======= projects Section ======= -->
     <?php
       include 'component/projects.php';
     ?>
     <!-- End projects Section -->
+
+    <!-- ======= portfolio Section ======= -->
+    <?php
+      include 'component/portfolio.php';
+    ?>
+    <!-- End portfolio Section -->
 
     <!-- ======= Contact Section ======= -->
     <?php
