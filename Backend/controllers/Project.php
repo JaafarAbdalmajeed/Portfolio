@@ -25,7 +25,6 @@
                 $result -> $statement -> get_result();
                 $projects = array();
                 while ($row = $result -> fetch_assoc()) {
-                    
                     array_push($projects, $row);
                 }
                 return $projects;
