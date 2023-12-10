@@ -1,5 +1,5 @@
 
-<div id="hero" class="hero route bg-image" style="background-image: url(assets/img/jaafar2Copy.jpeg)">
+<div id="hero" class="hero route bg-image" style="background-image: url(assets/img/jaafar1Copy.jpeg)">
     <div class="overlay-itro"></div>
     <div class="hero-content display-table">
         <div class="table-cell">

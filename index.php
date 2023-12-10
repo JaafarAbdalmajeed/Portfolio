@@ -49,17 +49,11 @@
     ?>
     <!-- End About Section -->
 
-    <!-- ======= Header ======= -->
+    <!-- ======= Skills Section ======= -->
     <?php
       include 'component/skills.php';
     ?>
-    <!-- End Header -->
-
-    <!-- ======= Services Section ======= -->
-    <?php
-      include 'component/services.php';
-    ?>
-    <!-- End Services Section -->
+    <!-- End Skills Section -->
 
     <!-- ======= Counter Section ======= -->
     <?php
@@ -67,23 +61,17 @@
     ?>
     <!-- End Counter Section -->
 
-    <!-- ======= Portfolio Section ======= -->
-    <?php
-      include 'component/counter.php';
-    ?>
-    <!-- End Portfolio Section -->
-
     <!-- ======= Testimonials Section ======= -->
     <?php
       include 'component/testimonials.php';
     ?>
     <!-- End Testimonials Section -->
 
-    <!-- ======= Blog Section ======= -->
+    <!-- ======= projects Section ======= -->
     <?php
-      include 'component/blog.php';
+      include 'component/projects.php';
     ?>
-    <!-- End Blog Section -->
+    <!-- End projects Section -->
 
     <!-- ======= Contact Section ======= -->
     <?php

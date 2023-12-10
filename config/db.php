@@ -36,6 +36,12 @@
         $statementSkills -> bindParam(':userId', $result['id']);
         $statementSkills -> execute();
         $resultsSkills = $statementSkills -> fetchAll(PDO::FETCH_ASSOC);
+
+        //Fetch projects for the user
+        $statementProjects = $conn -> prepare('SELECT project_name, project_link, project_image, project_about FROM projects WHERE user_id = :userId');
+        $statementProjects -> bindParam(':userId', $result['id']);
+        $statementProjects -> execute();
+        $resultsProject = $statementProjects -> fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
     echo "Failed: " . $e->getMessage();
     }
