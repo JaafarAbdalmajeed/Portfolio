@@ -20,7 +20,7 @@
 
         }
 
-        public function getProfessions () {
+        public function getProfessions ($userId) {
             try {
                 $sql = "SELECT * FROM professions WHERE user_id = ?";
                 $statement = $this -> conn -> prepare ($sql);
