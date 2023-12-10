@@ -1,4 +1,4 @@
-<section id="services" class="services-mf pt-5 route">
+<section id="skills" class="services-mf pt-5 route">
 <div class="container">
     <div class="row">
         <?php 
