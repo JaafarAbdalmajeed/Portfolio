@@ -1,5 +1,4 @@
 <?php 
-    include '../config/db.php';
     class User {
         private $conn;
 
@@ -11,29 +10,25 @@
             $hashPassword = password_hash($password, PASSWORD_DEFAULT);
             $sql = "INSERT INTO users (name, email, password, profile, mobile, address, facebook, linkedin, twitter) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $statement = $this->conn->prepare($sql);
-            $statement -> bindParam("sssssssss", $name, $email, $hashedPassword, $profile, $mobile, $address, $facebook, $linkedin, $twitter); 
+            $statement -> bindParam("sssssssss", $name, $email, $hashPassword, $profile, $mobile, $address, $facebook, $linkedin, $twitter); 
             return $statement -> execute();
         }
 
         public function getUserAuth($email, $password) {
             try {
                 $sql = "SELECT * FROM users WHERE email=?";
-                $statement -> $this -> conn ->prepare($sql);
-                $statement -> bind_param("s",$email);
-                $statement -> execute();
-                $result -> $statement -> get_result();
-                if ( $result -> num_rows > 0) {
-                    $user = $result -> fetch_assoc();
+                $statement = $this->conn->prepare($sql);
+                $statement->bindParam(1, $email); 
+                $statement->execute();
+                $result = $statement->fetch(PDO::FETCH_ASSOC);
 
-                    if(password_verify($password, $user['password'])){
-                        return $user;
-                    }
+                if ($result) {
+                    return $result;
                 }
 
                 return null;
-
             } catch (PDOException $e) {
-                echo 'ERROR: '$e->getMessage();
+                echo 'ERROR: '.$e->getMessage();
             }
 
         }
@@ -46,11 +41,11 @@
                                 name=?, email=?, password=?, profile=?, mobile=?, address=?, facebook=?, linkedin=?, twitter=? 
                                 WHERE email=?";
                 $statement = $this ->conn -> prepare($sql);
-                $stmt->bind_param("ssssssssss", $name, $newEmail, $hashedPassword, $profile, $mobile, $address, $facebook, $linkedin, $twitter, $email);
+                $statement->bind_param("ssssssssss", $name, $newEmail, $hashedPassword, $profile, $mobile, $address, $facebook, $linkedin, $twitter, $email);
                 return $stmt->execute();
 
             } catch (PDOException $e) {
-                echo 'ERROR: '$e->getMessage();
+                echo 'ERROR: '.$e->getMessage();
             }
         }
 
@@ -58,11 +53,11 @@
             try {
                 $sql = "DELETE FROM users WHERE id=?";
                 $statement = $this -> conn -> prepare($sql);
-                $statement -> bind_param("s",$id);
+                $statement -> bindParam("i", $id);
                 return $statement -> execute();
 
             } catch (PDOException $e) {
-                echo 'ERROR: '$e->getMessage();
+                echo 'ERROR: '.$e->getMessage();
             }
         }   
     }
