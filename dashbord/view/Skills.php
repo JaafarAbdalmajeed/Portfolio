@@ -1,11 +1,11 @@
 
 <?php
     require_once('../../Backend/config/db.php');
-    require_once('../../Backend/controllers/Project.php');
+    require_once('../../Backend/controllers/Skills.php');
 
-    $userHandler = new Project($conn);
+    $userHandler = new Skills($conn);
 
-    $projects = $userHandler->getProjectsByUserId(1);
+    $skills = $userHandler->getSkillsByUserId(1);
 ?>
 
 
@@ -16,7 +16,7 @@
             <div class="card my-4">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                 <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-                    <h6 class="text-white text-capitalize ps-3">Projects</h6>
+                    <h6 class="text-white text-capitalize ps-3">Skills</h6>
                 </div>
                 </div>
                 <div class="card-body px-0 pb-2">
@@ -24,13 +24,13 @@
                     <table class="table align-items-center mb-0">
                     <thead>
                         <tr>
-                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+                        
                         
                         <?php
-                            $projectsKeys = array_keys($projects[0]);
-                            for($i = 0; $i < count($projectsKeys); $i++){
-                                $columnName = $projectsKeys[$i];
-                                if ($projects[0][$columnName]) {
+                            $skillsKeys = array_keys($skills[0]);
+                            for($i = 0; $i < count($skillsKeys); $i++){
+                                $columnName = $skillsKeys[$i];
+                                if ($skills[0][$columnName]) {
                                     ?>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"><h6><?php echo $columnName?></h6></th>
                                     <?php
@@ -42,24 +42,17 @@
                     </thead>
                     <tbody>
                         <?php
-                        for ($j = 0; $j < count($projects); $j++) {
+                        for ($j = 0; $j < count($skills); $j++) {
                         ?>
                             <tr>
-                                <td>
-                                    <div class="d-flex px-2 py-1">
-                                        <div class="d-flex flex-column justify-content-center">
-                                            <h6 class="mb-0 text-sm"><?php echo $projects[$j]['project_name']; ?></h6>
-                                        </div>
-                                    </div>
-                                </td>
 
                                 <?php
-                                $projectsKeys = array_keys($projects[$j]);
-                                for ($i = 0; $i < count($projectsKeys); $i++) {
-                                    $columnName = $projectsKeys[$i];
-                                    if ($projects[$j][$columnName]) {
+                                $skillsKeys = array_keys($skills[$j]);
+                                for ($i = 0; $i < count($skillsKeys); $i++) {
+                                    $columnName = $skillsKeys[$i];
+                                    if ($skills[$j][$columnName]) {
                                 ?>
-                                        <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"><?php echo $projects[$j][$columnName] ?></td>
+                                        <td class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"><?php echo $skills[$j][$columnName] ?></td>
                                 <?php
                                     }
                                 }

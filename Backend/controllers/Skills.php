@@ -16,19 +16,18 @@
 
     public function getSkillsByUserId($userId)
     {
-        $sql = "SELECT * FROM skills WHERE user_id=?";
-        $statement = $this->conn->prepare($sql);
-        $statement->bind_param("i", $userId);
-        $statement->execute();
+        try {
+            $sql = "SELECT * FROM skills WHERE user_id=?";
+                $statement = $this->conn->prepare($sql);
+                $statement->bindParam(1, $userId, PDO::PARAM_INT);
+                $statement->execute();
+                $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        
+                return $result;
 
-        $result = $statement->get_result();
-
-        $skills = array();
-        while ($row = $result->fetch_assoc()) {
-            $skills[] = $row;
+        } catch (PDOException $e) {
+            echo 'ERROR:' . $e.getMessage();
         }
-
-        return $skills;
     }
 
     public function updateSkill($skillId, $userId, $skill, $icons)

@@ -93,7 +93,7 @@
     </nav>
     <!-- End Navbar -->
     <?php
-      include '../view/Project.php'
+      include '../view/Skills.php'
     ?>
     
     
