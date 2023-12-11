@@ -5,7 +5,9 @@
 
     $userHandler = new User($conn);
 
-    $users = $userHandler->getUserAuth('jaafar123@gmail.com','Pass@1');
+    
+    $users = $userHandler->getUserAuth('Ahmad123@gmail.com','$2y$10$H.LpHRmrIozLiNJijV82..DwTQDCmocYdiiCQoTm4uk7bRmsh2WKy');
+
 ?>
 
 
@@ -67,7 +69,7 @@
                                         }
                                         ?>
                         <td class="align-middle">
-                            <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                            <a href="../crud/formUpdateUser.php" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                             Edit
                             </a>
                         </td>
