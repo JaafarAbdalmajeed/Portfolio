@@ -55,11 +55,7 @@
     ?>
     <!-- End Skills Section -->
 
-    <!-- ======= Counter Section ======= -->
-    <?php
-      include 'component/counter.php';
-    ?>
-    <!-- End Counter Section -->
+
 
     <!-- ======= Testimonials Section ======= -->
     <?php

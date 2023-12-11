@@ -93,7 +93,7 @@
     </nav>
     <!-- End Navbar -->
     <?php
-      include '../view/Professions.php'
+      include '../view/Educations.php'
     ?>
     
     
