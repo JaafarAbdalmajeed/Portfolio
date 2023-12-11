@@ -52,11 +52,47 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white active bg-gradient-primary" href="../pages/tables.html">
+          <a class="nav-link text-white active bg-gradient-primary" href="?page=Users">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
-            <span class="nav-link-text ms-1">Tables</span>
+            <span class="nav-link-text ms-1">User</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white active bg-gradient-primary" href="?page=Projects">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">table_view</i>
+            </div>
+            <span class="nav-link-text ms-1">Projects</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white active bg-gradient-primary" href="?page=Educations">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">table_view</i>
+            </div>
+            <span class="nav-link-text ms-1">Educations</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white active bg-gradient-primary" href="?page=Professions">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">table_view</i>
+            </div>
+            <span class="nav-link-text ms-1">Professions</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white active bg-gradient-primary" href="?page=Skills">
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">table_view</i>
+            </div>
+            <span class="nav-link-text ms-1">Skills</span>
           </a>
         </li>
       </ul>
@@ -93,10 +129,20 @@
     </nav>
     <!-- End Navbar -->
     <?php
-      include '../view/Professions.php'
+      if(isset($_GET['page'])) {
+        if ($_GET['page'] === 'Users') {
+          include '../view/Users.php';
+        } else if ($_GET['page'] === 'Projects') {
+          include '../view/Projects.php';
+        } else if ($_GET['page'] === 'Educations') {
+          include '../view/Educations.php';
+        } else if ($_GET['page'] === 'Professions') {
+          include '../view/Professions.php';
+        } else if ($_GET['page'] === 'Skills') {
+          include '../view/Skills.php';
+        }
+      }
     ?>
-    
-    
   </main>
   
   <!--   Core JS Files   -->
