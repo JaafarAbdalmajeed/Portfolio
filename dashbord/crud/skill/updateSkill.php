@@ -35,7 +35,7 @@ if(isset($_POST['submit']) && $_GET['userId'] && $_GET['skillId']) {
 <body>
 <div class="container">
     <form method= "post" action = "">
-        <div class="form-group">
+        <div class="form-group"> 
             <label for="skillName">Skill</label>
             <input type="text" class="form-control" id="skillName" name= "skillName"aria-describedby="emailHelp" >
         </div>
