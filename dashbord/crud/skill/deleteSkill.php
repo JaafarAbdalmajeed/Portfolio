@@ -7,5 +7,8 @@
 
         $skillsHandler = new Skills($conn);
         $skillsHandler -> deleteSkill($skillId, $userId);
+        if (!$skillsHandler) {
+            return;
+        }
     }
 ?>

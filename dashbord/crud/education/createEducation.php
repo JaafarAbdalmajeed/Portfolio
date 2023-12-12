@@ -12,6 +12,9 @@
         $ُeducationHandler = new Educations($conn);
         
         $ُeducationHandler->createEducation($userId,$education, $foundation, $date);
+        if(!$ُeducationHandler) {
+            return;
+        }
         
     }
 ?>

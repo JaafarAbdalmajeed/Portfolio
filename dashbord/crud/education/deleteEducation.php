@@ -7,7 +7,9 @@
 
         $educationHandler = new Educations($conn);
         $educationHandler -> deleteEducation($id, $userId);
-        
+        if(!$educationHandler) {
+            return;
+        }
 
     }
 

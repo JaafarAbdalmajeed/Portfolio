@@ -13,7 +13,9 @@
         $ُeducationHandler = new Educations($conn);
         
         $ُeducationHandler->updateEducation($id,$userId,$education, $foundation, $date);
-        
+        if(!$educationHandler) {
+            return;
+        }
     }
 ?>
 

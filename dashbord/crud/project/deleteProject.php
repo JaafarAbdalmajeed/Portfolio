@@ -7,5 +7,8 @@
 
         $projectHandler = new Project($conn);
         $projectHandler -> deleteProject($projectId, $userId);
+        if(!$projectHandler) {
+            return;
+        }
     }
 ?>

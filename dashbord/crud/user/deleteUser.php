@@ -7,5 +7,8 @@
     if($_GET['id']) {
         $id = $_GET['id'];
         $userHandler->deleteUser($id);
+        if(!$userHandler){
+            return;
+        }
     }
 ?>

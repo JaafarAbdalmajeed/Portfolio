@@ -14,6 +14,9 @@ if (isset($_POST['submit'])) {
     $projectHandler = new Project($conn);
     
     $projectHandler->updateProject($projectId, $userId, $projectName, $projectLink, $projectImage, $projectAbout);
+    if(!$projectHandler) {
+        return;
+    }
 }
 ?>
 

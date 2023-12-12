@@ -12,7 +12,9 @@ if(isset($_POST['submit'])) {
     $projectHandler = new Project($conn);
     
     $projectHandler->createProject($userId, $projectName, $projectLink, $projectImage, $projectAbout);
-    
+    if(!$projectHandler) {
+        return;
+    }
 }
 ?>
 
