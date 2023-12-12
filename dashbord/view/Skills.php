@@ -3,9 +3,12 @@
     require_once('../../Backend/config/db.php');
     require_once('../../Backend/controllers/Skills.php');
 
-    $userHandler = new Skills($conn);
+    $skillHandler = new Skills($conn);
 
-    $skills = $userHandler->getSkillsByUserId(1);
+    $skills = $skillHandler->getSkillsByUserId(1);
+    if(!$skills) {
+        return ;
+    }
 ?>
 
 
@@ -58,9 +61,15 @@
                                 }
                                 ?>
                                 <td class="align-middle">
-                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                        Edit
+                                    <!-- <a href="../crud/skill/updateSkill.php?skillId=<?php echo $skills[$j]['Id']?>&userId=<?php echo $skills[$j]['user_id']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                        Update
+                                    </a> -->
+                                    <a href="../crud/skill/createSkill.php?userId=<?php echo $skills[$j]['user_id']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                        Create
                                     </a>
+                                    <!-- <a href="../crud/skill/deleteSkill.php?skillId=<?php echo $skills[$j]['id']?>&userId=<?php echo $skills?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                        Delete
+                                    </a> -->
                                 </td>
                             </tr>
                         <?php

@@ -6,6 +6,9 @@
     $userHandler = new Professions($conn);
 
     $professions = $userHandler->getProfessions(1);
+    if(!$professions) {
+        return ;
+    }
 ?>
 
 

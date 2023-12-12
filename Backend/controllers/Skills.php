@@ -7,11 +7,19 @@
 
         public function createSkill($userId, $skill, $icons)
     {
-        $sql = "INSERT INTO skills (user_id, skill, icons) VALUES (?, ?, ?)";
-        $statement = $this->conn->prepare($sql);
-        $statement->bind_param("iss", $userId, $skill, $icons);
 
-        return $stmt->execute();
+
+        try {
+            $sql = "INSERT INTO skills (user_id, skill, icons) VALUES (?, ?, ?)";
+            $statement = $this->conn->prepare($sql);
+            $statement -> bindParam(1, $userId, PDO::PARAM_INT);
+            $statement -> bindParam(2, $skill, PDO::PARAM_STR);
+            $statement -> bindParam(3, $icons, PDO::PARAM_STR);
+            return $statement->execute();
+
+        } catch (PDOException $e) {
+            echo 'ERROR:' . $e.getMessage();
+        }
     }
 
     public function getSkillsByUserId($userId)

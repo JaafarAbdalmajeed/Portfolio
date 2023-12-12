@@ -6,6 +6,9 @@
     $userHandler = new Project($conn);
 
     $projects = $userHandler->getProjectsByUserId(1);
+    if(!$projects) {
+        return ;
+    }
 ?>
 
 

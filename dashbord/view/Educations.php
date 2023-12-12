@@ -6,6 +6,9 @@
     $userHandler = new Educations($conn);
 
     $educations = $userHandler->getEducationsByUserId(1);
+    if(!$educations) {
+        return ;
+    }
 ?>
 
 
