@@ -37,15 +37,13 @@
             }
         }
 
-        public function deleteProject($projectId) {
+        public function deleteProject($projectId,$userId) {
             try {
-                $sql = "DELETE FROM projects WHERE id=?";
+                $sql = "DELETE FROM projects WHERE id=? && user_id=?";
                 $statement = $this -> conn -> prepare($sql);
-                $statement -> bindParam("i",$projectId);
-
+                $statement -> bindParam(1,$projectId,PDO::PARAM_INT);
+                $statement -> bindParam(2,$userId,PDO::PARAM_INT);
                 return $statement->execute();
-
-
             } catch (PDOException $e) {
                 echo 'ERROR: '.$e->getMessage();
             }

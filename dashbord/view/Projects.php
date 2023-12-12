@@ -10,6 +10,7 @@
 
 
 
+
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">
@@ -65,10 +66,10 @@
                                 }
                                 ?>
                                 <td class="align-middle">
-                                    <a href="javascript:;" class=" text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    <a href="../crud/project/updateProject.php?projectId=<?php echo $projects[$j]['id']?>&userId=<?php echo $projects[$j]['user_id']?>" class=" text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         Edit
                                     </a>
-                                    <a href="javascript:;" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    <a href="../crud/project/deleteProject.php?projectId=<?php echo $projects[$j]['id']?>&userId=<?php echo $projects[$j]['user_id']?>" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         Delete
                                     </a>
                                     <a href="../crud/project/createProject.php?userId=<?php echo $projects[$j]['user_id']?>" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
