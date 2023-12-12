@@ -6,8 +6,10 @@
     $userHandler = new User($conn);
 
     
-    $users = $userHandler->getUserAuth('Ahmad123@gmail.com','$2y$10$H.LpHRmrIozLiNJijV82..DwTQDCmocYdiiCQoTm4uk7bRmsh2WKy');
-
+    $users = $userHandler->getUserAuth('jaafarabdalmajead@gmail.com','$2y$10$wtt74H6MyIICNaCTjfU0Yu0QoCeHPZSkMQuLIGT5A3.IeGC.QQq1O');
+    if(!$users) {
+        return ;
+    }
 ?>
 
 
@@ -69,8 +71,14 @@
                                         }
                                         ?>
                         <td class="align-middle">
-                            <a href="../crud/formUpdateUser.php" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                            <a href="../crud/user/formUpdateUser.php" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                             Edit
+                            </a>
+                            <a href="../crud/user/deleteUser.php?id=<?php echo $users['id'];?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                            Delete
+                            </a>
+                            <a href="../crud/user/createUser.php" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                            Create
                             </a>
                         </td>
                         </tr>

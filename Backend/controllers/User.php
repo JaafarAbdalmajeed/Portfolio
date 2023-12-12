@@ -6,12 +6,21 @@
             $this->conn = $conn;
         }
 
-        public function createUser ($name, $email, $password, $profile, $mobile, $address, $facebook, $linkedin, $twitter) {
+        public function createUser($name, $email, $password, $profile, $mobile, $address, $facebook, $linkedin, $twitter) {
             $hashPassword = password_hash($password, PASSWORD_DEFAULT);
             $sql = "INSERT INTO users (name, email, password, profile, mobile, address, facebook, linkedin, twitter) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $statement = $this->conn->prepare($sql);
-            $statement -> bindParam("sssssssss", $name, $email, $hashPassword, $profile, $mobile, $address, $facebook, $linkedin, $twitter); 
-            return $statement -> execute();
+            $statement->bindParam(1, $name);
+            $statement->bindParam(2, $email);
+            $statement->bindParam(3, $hashPassword);
+            $statement->bindParam(4, $profile);
+            $statement->bindParam(5, $mobile);
+            $statement->bindParam(6, $address);
+            $statement->bindParam(7, $facebook);
+            $statement->bindParam(8, $linkedin);
+            $statement->bindParam(9, $twitter);
+        
+            return $statement->execute();
         }
 
         public function getUserAuth($email, $password) {
@@ -63,7 +72,7 @@
             try {
                 $sql = "DELETE FROM users WHERE id=?";
                 $statement = $this -> conn -> prepare($sql);
-                $statement -> bindParam("i", $id);
+                $statement -> bindParam(1, $id, PDO::PARAM_INT);
                 return $statement -> execute();
 
             } catch (PDOException $e) {
