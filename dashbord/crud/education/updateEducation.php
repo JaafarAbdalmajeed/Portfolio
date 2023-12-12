@@ -4,6 +4,7 @@
     require_once('../../../Backend/controllers/Educations.php');
 
     if(isset($_POST['submit'])) {
+        $id = $_GET['id'];
         $userId = $_GET['userId'];
         $education = $_POST['educationName'];
         $foundation = $_POST['educationFoundation'];
@@ -11,7 +12,7 @@
 
         $ُeducationHandler = new Educations($conn);
         
-        $ُeducationHandler->createEducation($userId,$education, $foundation, $date);
+        $ُeducationHandler->updateEducation($id,$userId,$education, $foundation, $date);
         
     }
 ?>
@@ -26,7 +27,7 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"  >
 
-<title>Add Education</title>
+<title>update Education</title>
 </head>
 <body>
     <div class="container">
