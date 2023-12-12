@@ -3,6 +3,7 @@
         include '../../../Backend/controllers/User.php';
         include '../../../Backend/config/db.php';
         if(isset($_POST['submit'])) {
+            $id =$_GET['id'];
             $name = $_POST['name'];
             $email = $_POST['email'];
             $password = $_POST['password'];
@@ -14,7 +15,7 @@
             $twitter = $_POST['twitter'];
 
             $userHandler = new User($conn);
-            $id =1;
+            
             $userHandler->updateUser($id, $name, $email, $password, $profile, $mobile, $address, $facebook, $linkedin, $twitter);
             //$user = $userHandler->getUserAuth('Ahmad123@gmail.com','$2y$10$H.LpHRmrIozLiNJijV82..DwTQDCmocYdiiCQoTm4uk7bRmsh2WKy');
         }
