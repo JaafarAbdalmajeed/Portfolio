@@ -42,6 +42,12 @@
         $statementProjects -> bindParam(':userId', $result['id']);
         $statementProjects -> execute();
         $resultsProject = $statementProjects -> fetchAll(PDO::FETCH_ASSOC);
+
+        //Fetch eductions for user
+        $statementEductions = $conn->prepare('SELECT education, date, foundation FROM educations WHERE user_id = :userId');
+        $statementEductions->bindParam(':userId', $result['id']);
+        $statementEductions->execute();
+        $resultsEduction = $statementEductions->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
     echo "Failed: " . $e->getMessage();
     }

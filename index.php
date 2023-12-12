@@ -55,7 +55,17 @@
     ?>
     <!-- End Skills Section -->
 
+  <!-- ======= Eductions Section ======= -->
+    <?php
+      include 'component/eductions.php';
+    ?>
+    <!-- End Eductions Section -->
 
+    <!-- ======= projects Section ======= -->
+    <?php
+      include 'component/projects.php';
+    ?>
+    <!-- End projects Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <?php
@@ -65,16 +75,12 @@
 
     
 
-    <!-- ======= projects Section ======= -->
-    <?php
-      include 'component/projects.php';
-    ?>
-    <!-- End projects Section -->
+    
 
     <!-- ======= portfolio Section ======= -->
-    <?php
-      include 'component/portfolio.php';
-    ?>
+    <!-- <?php
+      // include 'component/portfolio.php';
+    ?> -->
     <!-- End portfolio Section -->
 
     <!-- ======= Contact Section ======= -->
