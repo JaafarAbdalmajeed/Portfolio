@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: fcf8ff;
+}
+
+main{
+    width: 40%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: #fcf8ff;
+    
+}
+
+h1{
+    margin: 10px;
+    padding: 5px;
+    font-size: 2em;
+    
+
+}
+
+p{
+    text-align: center;
+    margin: 5px;
+    padding: 10px;
+    color: #4c4c4c;
+}
+
+img{
+    width: 70%;
+    margin: auto;
+}
+
+.btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+a{
+    margin: 10px;
+    padding: 15px;
+    border-radius: 30px;
+    background-color: aquamarine;
+    width: 50%;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+#btnSingIn{
+    background-color:rgb(13, 0, 255);
+}
+
+#btnSingUp{
+    background-color:rgb(255, 38, 0);
+}
+
+
+
+
