@@ -22,6 +22,30 @@
             }
         }
 
+        public function updateProject ($projectId, $userId, $projectName, $projectLink, $projectImage, $projectAbout) {
+
+            try {
+                $sql = "UPDATE projects SET 
+                project_name = ?,
+                project_link = ?,
+                project_image = ?,
+                project_about = ?
+                WHERE user_id = ? && id = ?";
+
+                $statement = $this->conn -> prepare($sql);
+                $statement -> bindParam(1, $projectName, PDO::PARAM_STR);
+                $statement -> bindParam(2, $projectLink, PDO::PARAM_STR);
+                $statement -> bindParam(3, $projectImage, PDO::PARAM_STR);
+                $statement -> bindParam(4, $projectAbout, PDO::PARAM_STR);
+                $statement -> bindParam(5, $userId, PDO::PARAM_INT);
+                $statement -> bindParam(6, $projectId, PDO::PARAM_INT);
+                return $statement -> execute();
+
+            } catch (PDOException $e) {
+                echo 'ERROR: ' . $e->getMessage();
+            }
+        }
+
 
         public function getProjectsByUserId($userId) {
             try {
