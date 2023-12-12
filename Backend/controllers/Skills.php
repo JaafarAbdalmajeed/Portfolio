@@ -30,9 +30,7 @@
                 $statement->bindParam(1, $userId, PDO::PARAM_INT);
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-        
                 return $result;
-
         } catch (PDOException $e) {
             echo 'ERROR:' . $e.getMessage();
         }
@@ -40,23 +38,33 @@
 
     public function updateSkill($skillId, $userId, $skill, $icons)
     {
-        $sql = "UPDATE skills SET user_id=?, skill=?, icons=? WHERE id=?";
-        $statement = $this->conn->prepare($sql);
-        $statement->bind_param("issi", $userId, $skill, $icons, $skillId);
+        try {
+            $sql = "UPDATE skills SET skill=?, icons=? WHERE id=? && user_id=?";
+            $statement = $this->conn->prepare($sql);
+            $statement -> bindParam( 1, $skill, PDO::PARAM_STR);
+            $statement -> bindParam( 2, $icons, PDO::PARAM_STR);
+            $statement -> bindParam( 3, $skillId, PDO::PARAM_INT);
+            $statement -> bindParam( 4, $userId, PDO::PARAM_INT);
 
-        return $statement->execute();
-    }
+            return $statement->execute();    
+        } catch (PDOException $e) {
+            echo 'ERROR:' . $e.getMessage();
+        }
+    
+        }
 
     public function deleteSkill($skillId, $userId)
     {
-        $sql = "DELETE FROM skills WHERE id=? && user_id=?";
-        $statement = $this->conn->prepare($sql);
-        $statement -> bindParam(1, $skillId,PDO::PARAM_INT);
-        $statement -> bindParam(2, $userId,PDO::PARAM_INT);
-        return $statement->execute();
+        try {
+            $sql = "DELETE FROM skills WHERE id=? && user_id=?";
+            $statement = $this->conn->prepare($sql);
+            $statement -> bindParam(1, $skillId,PDO::PARAM_INT);
+            $statement -> bindParam(2, $userId,PDO::PARAM_INT);
+            return $statement->execute();
+    
+        } catch (PDOException $e) {
+            echo 'ERROR:' . $e.getMessage();
+        }
     }
     }
-
-
-
 ?>
