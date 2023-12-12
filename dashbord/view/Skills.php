@@ -67,9 +67,9 @@
                                     <a href="../crud/skill/createSkill.php?userId=<?php echo $skills[$j]['user_id']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         Create
                                     </a>
-                                    <!-- <a href="../crud/skill/deleteSkill.php?skillId=<?php echo $skills[$j]['id']?>&userId=<?php echo $skills?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    <a href="../crud/skill/deleteSkill.php?skillId=<?php echo $skills[$j]['id']?>&userId=<?php echo $skills[$j]['user_id']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         Delete
-                                    </a> -->
+                                    </a>
                                 </td>
                             </tr>
                         <?php

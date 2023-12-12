@@ -47,12 +47,12 @@
         return $statement->execute();
     }
 
-    public function deleteSkill($skillId)
+    public function deleteSkill($skillId, $userId)
     {
-        $sql = "DELETE FROM skills WHERE id=?";
+        $sql = "DELETE FROM skills WHERE id=? && user_id=?";
         $statement = $this->conn->prepare($sql);
-        $statement->bind_param("i", $skillId);
-
+        $statement -> bindParam(1, $skillId,PDO::PARAM_INT);
+        $statement -> bindParam(2, $userId,PDO::PARAM_INT);
         return $statement->execute();
     }
     }
