@@ -65,8 +65,15 @@
                                 }
                                 ?>
                                 <td class="align-middle">
-                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    <a href="javascript:;" class=" text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         Edit
+                                    </a>
+                                    <a href="javascript:;" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                        Delete
+                                    </a>
+                                    <a href="../crud/project/createProject.php?userId=<?php echo $projects[$j]['user_id']?>" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                        create
+                                        
                                     </a>
                                 </td>
                             </tr>
