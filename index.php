@@ -68,9 +68,9 @@
     <!-- End projects Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <?php
-      include 'component/testimonials.php';
-    ?>
+    <!-- <?php
+      //include 'component/testimonials.php';
+    ?> -->
     <!-- End Testimonials Section -->
 
     

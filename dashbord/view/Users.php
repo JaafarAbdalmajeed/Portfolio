@@ -6,7 +6,7 @@
     $userHandler = new User($conn);
 
     
-    $users = $userHandler->getUserAuth('Ahmad123@gmail.com','$2y$10$H.LpHRmrIozLiNJijV82..DwTQDCmocYdiiCQoTm4uk7bRmsh2WKy');
+    $users = $userHandler->getUserAuth('jaafarabdalmajead@gmail.com','$2y$10$Fx3nLNn23lfGJejlxO7Pc.v6Yf2dRcRcZ.Ru6lgz76B2fjWyIA8LO');
     if(!$users) {
         return ;
     }
@@ -71,13 +71,13 @@
                                         }
                                         ?>
                         <td class="align-middle">
-                            <a href="../crud/user/updateUser.php?id=<?php echo $users['id'];?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                            Edit
+                            <a href="../crud/user/updateUser.php?id=<?php echo $users['id'];?>" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                            Update
                             </a>
-                            <a href="../crud/user/deleteUser.php?id=<?php echo $users['id'];?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                            <a href="../crud/user/deleteUser.php?id=<?php echo $users['id'];?>" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                             Delete
                             </a>
-                            <a href="../crud/user/createUser.php" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                            <a href="../crud/user/createUser.php" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                             Create
                             </a>
                         </td>

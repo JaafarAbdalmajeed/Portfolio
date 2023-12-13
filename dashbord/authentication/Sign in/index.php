@@ -51,7 +51,7 @@
             
             if ($user && $password === $user['password']) {
                 
-                    header("Location: ../../../index.php");
+                    header("Location: ../../pages/tables.php");
                 } 
         } catch (PDOException $e) {
             echo 'ERROR: ' . $e->getMessage();

@@ -70,7 +70,7 @@
                                 ?>
                                 <td class="align-middle">
                                     <a href="../crud/project/updateProject.php?projectId=<?php echo $projects[$j]['id']?>&userId=<?php echo $projects[$j]['user_id']?>" class=" text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                        Edit
+                                        Update
                                     </a>
                                     <a href="../crud/project/deleteProject.php?projectId=<?php echo $projects[$j]['id']?>&userId=<?php echo $projects[$j]['user_id']?>" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         Delete

@@ -68,19 +68,19 @@
                                 }
                                 ?>
                                 <td class="align-middle">
-                                    <a href="../crud/education/updateEducation.php?userId=<?php echo $educations[$j]['user_id']?>&id=<?php echo $educations[$j]['id']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    <a href="../crud/education/updateEducation.php?userId=<?php echo $educations[$j]['user_id']?>&id=<?php echo $educations[$j]['id']?>" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         Update
                                     </a>
                                 </td>
 
                                 <td class="align-middle">
-                                    <a href="../crud/education/deleteEducation.php?userId=<?php echo $educations[$j]['user_id']?>&id=<?php echo $educations[$j]['id']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    <a href="../crud/education/deleteEducation.php?userId=<?php echo $educations[$j]['user_id']?>&id=<?php echo $educations[$j]['id']?>" class=" text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         Delete
                                     </a>
                                 </td>
 
                                 <td class="align-middle">
-                                    <a href="../crud/education/createEducation.php?userId=<?php echo $educations[$j]['user_id']?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                    <a href="../crud/education/createEducation.php?userId=<?php echo $educations[$j]['user_id']?>" class=" text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         Create
                                     </a>
                                 </td>
