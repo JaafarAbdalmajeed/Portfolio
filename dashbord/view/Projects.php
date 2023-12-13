@@ -19,12 +19,19 @@
             <div class="col-12">
             <div class="card my-4">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <a href="../crud/project/createProject.php?userId=<?php echo $projects[0]['user_id']?>" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                        create
+                                        
+                                    </a>
                 <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                     <h6 class="text-white text-capitalize ps-3">Projects</h6>
                 </div>
                 </div>
+                
                 <div class="card-body px-0 pb-2">
+                
                 <div class="table-responsive p-0">
+                
                     <table class="table align-items-center mb-0">
                     <thead>
                         <tr>
@@ -75,10 +82,7 @@
                                     <a href="../crud/project/deleteProject.php?projectId=<?php echo $projects[$j]['id']?>&userId=<?php echo $projects[$j]['user_id']?>" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                                         Delete
                                     </a>
-                                    <a href="../crud/project/createProject.php?userId=<?php echo $projects[$j]['user_id']?>" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                        create
-                                        
-                                    </a>
+        
                                 </td>
                             </tr>
                         <?php
