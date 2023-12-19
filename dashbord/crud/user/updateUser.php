@@ -13,34 +13,12 @@
             $facebook = $_POST['facebook'];
             $linkedin = $_POST['linkedin'];
             $twitter = $_POST['twitter'];
+            $image = $_FILES['image'];
 
+            $imageHandler = new imageCRUD($conn);
+            $imagePath = $imageHandler -> createAndUpdateImage($image);
             $userHandler = new User($conn);
-
-            $imagePath = '';
-
-            if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
-                $imageName = $_FILES['image']['name'];           
-                $imageTmpName = $_FILES['image']['tmp_name'];             
-                $imageType = $_FILES['image']['type'];             
-                $imageSize = $_FILES['image']['size'];
-                $imgExt = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
-
-                $maxFileSize = 5 * 1024 * 1024; // 5 MB
-                if ($imageSize > $maxFileSize) {
-                    die('File size exceeds the maximum allowed size');
-                }
-
-                $uniqueFilename = uniqid() . '.' . $imageName;
-                $imagePath = "../../../uploads/images/" . $uniqueFilename;
-
-                if (move_uploaded_file($imageTmpName, $imagePath)) {
-                    echo 'File uploaded successfully.';
-                } else {
-                    echo 'Error uploading file.';
-                }
-            }
-            
-            $userHandler->updateUser($id, $name, $email, $password, $profile, $mobile, $address, $facebook, $linkedin, $twitter);
+            $userHandler->updateUser($id, $name, $email, $password, $profile, $mobile, $address, $facebook, $linkedin, $twitter, $imagePath);
             if(!$userHandler){
                 return;
             }

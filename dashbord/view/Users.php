@@ -4,8 +4,6 @@
     require_once('../../Backend/controllers/User.php');
 
     $userHandler = new User($conn);
-
-    
     $users = $userHandler->getUserAuth('jaafarabdalmajead@gmail.com','$2y$10$Fx3nLNn23lfGJejlxO7Pc.v6Yf2dRcRcZ.Ru6lgz76B2fjWyIA8LO');
     if(!$users) {
         return ;
@@ -19,6 +17,9 @@
             <div class="col-12">
             <div class="card my-4">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <a href="../crud/user/createUser.php" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                            Create
+                            </a>
                 <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
                     <h6 class="text-white text-capitalize ps-3"><?php echo $users['name']; ?></h6>
                 </div>
@@ -77,9 +78,7 @@
                             <a href="../crud/user/deleteUser.php?id=<?php echo $users['id'];?>" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                             Delete
                             </a>
-                            <a href="../crud/user/createUser.php" class="text-white btn btn-primary text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                            Create
-                            </a>
+                            
                         </td>
                         </tr>
                     </tbody>

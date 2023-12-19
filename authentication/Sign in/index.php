@@ -34,7 +34,7 @@
 </html>
 
 <?php 
-    include '../../../Backend/config/db.php';
+    include '../../Backend/config/db.php';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $email = $_POST['email'];
@@ -51,7 +51,7 @@
             
             if ($user && $password === $user['password']) {
                 
-                    header("Location: ../../pages/tables.php");
+                    header("Location: ../../dashbord/pages/tables.php");
                 } 
         } catch (PDOException $e) {
             echo 'ERROR: ' . $e->getMessage();

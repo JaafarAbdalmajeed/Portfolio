@@ -46,16 +46,9 @@
         public function updateUser($id, $name, $newEmail, $password, $profile, $mobile, $address, $facebook, $linkedin, $twitter, $imagePath) {
             try {
                 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-                if () {
+                
                     $sql = "UPDATE users SET
-                                name=?, email=?, password=?, profile=?, mobile=?, address=?, facebook=?, linkedin=?, twitter=? 
-                                WHERE id=?";
-                    $statement = $this->conn->prepare($sql);
-
-                } else {
-                    $sql = "UPDATE users SET
-                                name=?, email=?, password=?, profile=?, mobile=?, address=?, facebook=?, linkedin=?, twitter=? 
+                                name=?, email=?, password=?, profile=?, mobile=?, address=?, facebook=?, linkedin=?, twitter=?, image=?
                                 WHERE id=?";
                     $statement = $this->conn->prepare($sql);
             
@@ -68,8 +61,9 @@
                     $statement->bindValue(7, $facebook, PDO::PARAM_STR);
                     $statement->bindValue(8, $linkedin, PDO::PARAM_STR);
                     $statement->bindValue(9, $twitter, PDO::PARAM_STR);
-                    $statement->bindValue(10, $id, PDO::PARAM_INT);
-                }
+                    $statement->bindValue(10, $imagePath, PDO::PARAM_INT);
+                    $statement->bindValue(11, $id, PDO::PARAM_STR);
+                
                 return $statement->execute();
             } catch (PDOException $e) {
                 echo 'ERROR: ' . $e->getMessage();
