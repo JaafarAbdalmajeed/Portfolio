@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     $host = 'localhost';
     $dbname = 'Portfolio';
     $user = 'root';
@@ -15,7 +16,7 @@
 <?php
     try {
         // Fetch user data
-        $statement = $conn->prepare("SELECT * FROM `users` WHERE `users`.`id` = 1");
+        $statement = $conn->prepare("SELECT * FROM `users` WHERE `users`.`email` = $_SESSION[userEmail]");
         $statement->execute();
         $result = $statement->fetch(PDO::FETCH_ASSOC);
 

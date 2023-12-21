@@ -1,10 +1,11 @@
 
 <?php
+    session_start();
     require_once('../../Backend/config/db.php');
     require_once('../../Backend/controllers/User.php');
 
     $userHandler = new User($conn);
-    $users = $userHandler->getUserAuth('jaafarabdalmajead@gmail.com','$2y$10$Fx3nLNn23lfGJejlxO7Pc.v6Yf2dRcRcZ.Ru6lgz76B2fjWyIA8LO');
+    $users = $userHandler->getUserAuth($_SESSION['userEmail'], $_SESSION['password']);
     if(!$users) {
         return ;
     }

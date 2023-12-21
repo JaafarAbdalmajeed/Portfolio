@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +54,8 @@
             $user = $sql->fetch(PDO::FETCH_ASSOC);
             
             if ($user && $password === $user['password']) {
-                
+                    $_SESSION['userEmail'] = $email;
+                    $_SESSION['password'] = $password;
                     header("Location: ../../dashbord/pages/tables.php");
                 } 
         } catch (PDOException $e) {
