@@ -8,7 +8,7 @@
             $this -> conn = $conn;
         }
 
-        public function createAndUpdateImage ($image) {
+        public function createAndUpdateImage ($image, $whoIs) {
             $imagePath = '';
             if ($image !== null) {
                 $imageName = $image['name'];           
@@ -23,7 +23,17 @@
                 }
 
                 $uniqueFilename = uniqid() . '.' . $imageName;
-                $imagePath = "../../../uploads/images/" . $uniqueFilename;
+                $imagePath = "../../uploads/$whoIs/" . $uniqueFilename;
+                // if ($whoIs === 'image') {
+                //     
+                // } else if ($whoIs === 'image') {
+                //     $imagePath = "../../uploads/images/" . $uniqueFilename;
+                // } else if ($whoIs === 'image') {
+                //     $imagePath = "../../uploads/images/" . $uniqueFilename;
+                // } else if ($whoIs === 'image') {
+                    
+                // }
+                
 
                 if (move_uploaded_file($imageTmpName, $imagePath)) {
                     

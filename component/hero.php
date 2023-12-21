@@ -1,5 +1,5 @@
 
-<div id="hero" class="hero route bg-image" style="background-image: url(assets/img/jaafar1.jpeg)">
+<div id="hero" class="hero route bg-image" style="background-image: url(uploads/user images/<?php echo $result['image']?>)">
     <div class="overlay-itro"></div>
     <div class="hero-content display-table">
         <div class="table-cell">

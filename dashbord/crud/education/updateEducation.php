@@ -9,7 +9,10 @@
         $education = $_POST['educationName'];
         $foundation = $_POST['educationFoundation'];
         $date = $_POST['educationDate'];
+        $image = $_FILES['image'];
 
+        $imageHandler = new ImageCRUD($conn);
+        $imagePath = $imageHandler -> createAndUpdateImage($image, 'education images');
         $ُeducationHandler = new Educations($conn);
         
         $ُeducationHandler->updateEducation($id,$userId,$education, $foundation, $date);
@@ -32,7 +35,7 @@
 <title>update Education</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" enctype="multipart/form-data">
         <form method= "post" action = "">
             <div class="form-group">
                 <label for="educationName">Education Name</label>
@@ -46,6 +49,10 @@
             <div class="form-group">
                 <label for="educationDate">Education Date</label>
                 <input type="text" name = "educationDate" class="form-control" id="educationDate" aria-describedby="emailHelp" >
+            </div>
+            <div class="form-group">
+                <label for="educationImage">Education Image</label>
+                <input type="file" name = "image" class="form-control" id="educationImage" aria-describedby="emailHelp" >
             </div>
             <button type="submit" name = "submit" class="btn btn-primary">Submit</button>
         </form>

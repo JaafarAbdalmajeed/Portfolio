@@ -16,7 +16,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $image = $_FILES['image'];
     
     $imageHandler = new imageCRUD($conn);
-    $imagePath = $imageHandler -> createAndUpdateImage($image);
+    $imagePath = $imageHandler -> createAndUpdateImage($image, 'user images');
     $userHandler = new User($conn);
     $userHandler->createUser($name, $email, $password, $profile, $mobile, $address, $facebook, $linkedin, $twitter, $imagePath);
     if(!$userHandler){

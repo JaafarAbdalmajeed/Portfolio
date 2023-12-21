@@ -8,10 +8,13 @@ if(isset($_POST['submit'])) {
     $projectLink = $_POST['projectLink'];
     $projectImage = $_POST['projectImage'];
     $projectAbout = $_POST['projectAbout'];
+    $image = $_FILES['image'];
+    $imageHandler = new imageCRUD($conn);
+    $imagePath = $imageHandler -> createAndUpdateImage($image, 'projects images');
 
     $projectHandler = new Project($conn);
     
-    $projectHandler->createProject($userId, $projectName, $projectLink, $projectImage, $projectAbout);
+    $projectHandler->createProject($userId, $projectName, $projectLink, $imagePath, $projectAbout);
     if(!$projectHandler) {
         return;
     }
@@ -32,18 +35,18 @@ if(isset($_POST['submit'])) {
 </head>
 <body>
 <div class="container">
-    <form method= "post" action = "">
+    <form method= "post" action = "createProject.php" enctype="multipart/form-data">
         <div class="form-group">
             <label for="exampleInputEmail1">Project Name</label>
             <input type="text" class="form-control" id="projectName" name= "projectName"aria-describedby="emailHelp" >
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Project Link</label>
+            <label for="projectLink">Project Link</label>
             <input type="url" name = "projectLink" class="form-control" id="projectLink" aria-describedby="emailHelp" >
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Project Image</label>
-            <input type="file" name ="projectImage" class="form-control" id="projectImage">
+            <label for="projectImage">Project Image</label>
+            <input type="file" name ="image" class="form-control" id="projectImage">
         </div>
         <div class="form-group">
             <label for="exampleInputPassword1">Project About</label>

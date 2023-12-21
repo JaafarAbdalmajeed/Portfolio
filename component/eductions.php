@@ -18,7 +18,7 @@
                     <div class="work-box">
                     <a href="assets/img/work-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                         <div class="work-img">
-                        <img src="assets/img/work-6.jpg" alt="" class="img-fluid">
+                        <img src="../uploads/education images/<?php echo $resultsEduction[$i]['image'] ?>" alt="" class="img-fluid">
                         </div>
                     </a>
                     <div class="work-content">

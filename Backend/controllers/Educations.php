@@ -6,15 +6,16 @@ class Educations {
         $this->conn = $conn;
     }
 
-    public function createEducation($userId, $education, $foundation, $date) {
+    public function createEducation($userId, $education, $foundation, $date, $imagePath) {
         try {
-            $sql = "INSERT INTO educations (user_id, education, foundation, date) 
-                    VALUES (?, ?, ?, ?)";
+            $sql = "INSERT INTO educations (user_id, education, foundation, date, image) 
+                    VALUES (?, ?, ?, ?, ?)";
             $statement = $this->conn->prepare($sql);
             $statement->bindParam(1, $userId, PDO::PARAM_INT);
             $statement->bindParam(2, $education, PDO::PARAM_STR);
             $statement->bindParam(3, $foundation, PDO::PARAM_STR);
             $statement->bindParam(4, $date, PDO::PARAM_STR);
+            $statement->bindParam(5, $imagePath, PDO::PARAM_STR);
 
             return $statement->execute();
         } catch (PDOException $e) {
@@ -22,7 +23,7 @@ class Educations {
         }
     }
 
-    public function updateEducation($educationId, $userId, $education, $foundation, $date) {
+    public function updateEducation($educationId, $userId, $education, $foundation, $date, $imagePath) {
         try {
             $sql = 'UPDATE educations SET 
                     user_id=?, education=?, foundation=?, date=?
@@ -33,6 +34,7 @@ class Educations {
             $statement->bindParam(3, $foundation, PDO::PARAM_STR);
             $statement->bindParam(4, $date, PDO::PARAM_STR);
             $statement->bindParam(5, $educationId, PDO::PARAM_INT);
+            $statement->bindParam(6, $imagePath, PDO::PARAM_INT);
 
             return $statement->execute();
         } catch (PDOException $e) {
